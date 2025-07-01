@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-
+import Administradores from '../views/Administradores.vue'
+import ReservaConfirmada from '@/views/ReservaConfirmada.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -8,6 +9,36 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: ()=>import('../views/LoginView.vue'),
+    },
+     {
+      path: '/empleado',
+      name: 'empleado',
+      component: ()=>import('../views/EmpleadoViews.vue'),
+    },
+    {
+      path: '/crear-empleado',
+      name: 'CrearEmpleado',
+      component: ()=>import('../views/CrearEmpleado.vue'),
+    },
+    {
+      path: '/usuarios',
+      name: 'usuarios',
+      component: () => import('../views/UsuarioView.vue'),
+    },
+    {
+      path: '/administrador',
+      name: 'administrador',
+      component: () => import('../views/Administradores.vue'),
+    },
+    {
+      path: '/reserva-confirmada',
+      name: 'ReservaConfirmada',
+      component: () => import('../views/ReservaConfirmada.vue'),
     },
     {
       path: '/about',
